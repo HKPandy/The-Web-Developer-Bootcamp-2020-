@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selecting</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <h1>Look at my Pokemon!</h1>
+    <section id="container"></section>
+    <script src="app.js"></script>
+</body>
+
+</html>
+
+CSS:
+
+.pokemon {
+    display: inline-block;
+    text-align: center;
+}
+
+.pokemon img {
+    display: block;
+}
+
+Javascript:
+
+https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png
+
+const container = document.querySelector('#container');
+const baseURL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
+
+for (let i = 1; i <= 151; i++) {
+    const pokemon = document.createElement('div');
+    pokemon.classList.add('pokemon');
+    const label = document.createElement('span');
+    label.innerText = '#${i}';
+    const newImg = document.createElement('img');
+    newImg.src = '${baseURL}${i}.png'
+
+    pokemon.appendChild(newImg);
+    pokemon.appendChild(label);
+    container.appendChild(newImg)
+}
