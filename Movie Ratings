@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie Ratings</title>
+</head>
+<body>
+var movies = [
+    {
+    title: "Pokemon The Movie",
+     hasWatched: true,
+     rating: 5
+    },
+    {
+    title: "When Marnie Was Here",
+     hasWatched: false,
+     rating: 4.5
+    },
+    {
+    title: "Spirited Away",
+     hasWatched: true,
+     rating: 5
+    },
+    {
+    title: "Wind Rises",
+     hasWatched: false,
+     rating: 4.5
+    }
+]
+movies.forEach(function(movie){
+    var result = "You have ";
+    if(movie.hasWatched){
+        result += "watched ";
+    } else {
+    result += "not seen ";
+    }
+    result += "\"" + movie.title + "\" - ";
+    result += movie.rating + " stars";
+    console.log(result)
+})
+You have watched "Pokemon The Movie" - 5 stars
+You have not seen "When Marnie Was Here" - 4.5 stars
+You have watched "Spirited Away" - 5 stars
+You have not seen "Wind Rises" - 4.5 stars
+
+function buildString(movie){
+      var result = "You have ";
+    if(movie.hasWatched){
+        result += "watched ";
+    } else {
+    result += "not seen ";
+    }
+    result += "\"" + movie.title + "\" - ";
+    result += movie.rating + " stars";
+    console.log(result)
+}
+
+movies.forEach(function(movie){
+    console.log(buildString(movie));
+});
+
+You have watched "Pokemon The Movie" - 5 stars
+VM1631:2 undefined
+VM1625:10 You have not seen "When Marnie Was Here" - 4.5 stars
+VM1631:2 undefined
+VM1625:10 You have watched "Spirited Away" - 5 stars
+VM1631:2 undefined
+VM1625:10 You have not seen "Wind Rises" - 4.5 stars
+
+
+</body>
+</html> 
